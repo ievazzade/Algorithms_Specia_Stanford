@@ -8,9 +8,9 @@ def karatsuba_multiplication(x,y):
 
     ac = karatsuba_multiplication(a,c)
     bd = karatsuba_multiplication(b,d)
-    ad = karatsuba_multiplication(a, d)
-    bc = karatsuba_multiplication(b, c)
-    result = (ac * (10 ** n1)) + ((ad+bc) * (10**(n1//2))) + bd
+    ab_cd = karatsuba_multiplication(a+b, c+d)
+    s3 = ab_cd - ac - bd
+    result = (ac * (10 ** n1)) + (s3 * (10**(n1//2))) + bd
     
     return result
 
